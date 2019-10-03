@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+	<%- include("inc/head") -%>
+	<body>
+		
+	<div class="gtco-loader"></div>
+	
+	<div id="page">
+
+	
+		<%- include('inc/header-menu') -%>
+		<%- include('inc/header') -%>
+	
+	
+	
+	<div class="gtco-section">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="col-md-6 animate-box">
+
+							<% if (typeof error === "string") {%>
+								<div class="alert alert-danger">
+									<%= error %>
+								</div>
+								<% } %>
+							
+								<% if (typeof success === "string") {%>
+									<div class="alert alert-success">
+										<%= success %>
+									</div>
+									<% } %>
+
+					<h3>Entre em Contato</h3>
+					<form action="/contacts" method="post">
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label class="sr-only" for="name">Nome</label>
+								<input type="text" id="name" name="name" class="form-control" placeholder="Seu nome" value="<%= body.name %>">
+							</div>
+							
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label class="sr-only" for="email">E-mail</label>
+								<input type="text" id="email" name="email" class="form-control" placeholder="Seu endereço de e-mail"  value="<%= body.email %>">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label class="sr-only" for="message">Mensagem</label>
+								<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Escreve alguma coisa"><%= body.message %></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Enviar" class="btn btn-primary">
+						</div>
+
+					</form>		
+				</div>
+				<div class="col-md-5 col-md-push-1 animate-box">
+					
+					<div class="gtco-contact-info">
+						<h3>Informações de Contato</h3>
+						<ul>
+							<li class="address">Rua Doutor Cecim Miguel - 2580 - Parque Moema, Franca - SP , 14409-174</li>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.9400720637163!2d-47.398442085076084!3d-20.5086827862824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b0a658985d5599%3A0xab0cea71a7e4591e!2sRua%20Dr.%20Cecim%20Miguel%2C%202580%20-%20Parque%20Moema%2C%20Franca%20-%20SP!5e0!3m2!1spt-PT!2sbr!4v1569442297252!5m2!1spt-PT!2sbr" width="400" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+							<li class="phone"><a href="tel://16991235853">(16) 99123-5853</a></li>
+							<li class="email"><a href="s.m.c.martins@hotmail.com">s.m.c.martins@hotmail.com</a></li>
+							<li class="url"><a href="https://www.sortecertaconsorcios.com.br">sortecerta.com.br</a></li>
+						</ul>
+					</div>
+
+
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<%- include('inc/footer') -%>
+	</div>
+
+	
+
+	<%- include('inc/footer-gototop') -%>
+
+	<%- include('inc/footer-scripts') -%>
+
+	</body>
+</html>
+
